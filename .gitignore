@@ -1,3 +1,9 @@
-bin/
+# IDE folders should go here
 .vscode/
+
+# These will be generated when building the project
+bin/
 build/
+
+# Right now this file is only used for testing purposes no need to add them to the project history
+src/main.cpp
