@@ -22,10 +22,10 @@ namespace AF820_SmartLight {
             this->setRandomValue(state);
         }
 
-        void Random::setRandomValue(bool state) {
+        void Random::setRandom(bool state) {
             this->random = state;
         }
-        void Random::setRandomValue(uint8_t state) {
+        void Random::setRandom(uint8_t state) {
             this->random = state > 0;
         }
     }

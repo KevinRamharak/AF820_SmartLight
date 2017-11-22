@@ -14,8 +14,8 @@ namespace AF820_SmartLight {
             Random(bool state);
             Random(uint8_t state);
 
-            void setRandomValue(bool state);
-            void setRandomValue(uint8_t state);
+            void setRandom(bool state);
+            void setRandom(uint8_t state);
         };
     }
 }

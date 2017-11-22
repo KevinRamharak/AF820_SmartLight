@@ -29,15 +29,15 @@ namespace AF820_SmartLight {
             this->setSleepValue(value);
         }
 
-        Sleep::setSleepValue(uint8_t value) {
+        void Sleep::setSleepValue(uint8_t value) {
             this->sleep[0] = 0x00;
             this->sleep[1] = value;
         }
-        Sleep::setSleepValue(uint8_t * value) {
+        void Sleep::setSleepValue(uint8_t * value) {
             this->sleep[0] = value[0];
             this->sleep[1] = value[1];
         }
-        Sleep::setSleepValue(uint16_t value) {
+        void Sleep::setSleepValue(uint16_t value) {
             this->sleep[0] = (uint8_t) (value >> 8);
             this->sleep[1] = (uint8_t) value;
         }
