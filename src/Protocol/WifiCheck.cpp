@@ -3,7 +3,7 @@
 namespace AF820_SmartLight {
     namespace Protocol {
         WifiCheck::WifiCheck() {
-            this->setWifiFunction(WifiFunction::WIFI_CHECK);
+            this->setWifiFunction(WifiFunction::CHECK);
         }
     }
 }

@@ -34,26 +34,26 @@ namespace AF820_SmartLight {
         }
 
         WifiSet::WifiSet() {
-            this->setWifiFunction(WifiFunction::WIFI_SET);
+            this->setWifiFunction(WifiFunction::SET);
             this->setSSID("");
             this->setPassword("");
             this->alignBuffer();
         }
 
         WifiSet::WifiSet(std::string ssid, std::string password) {
-            this->setWifiFunction(WifiFunction::WIFI_SET);
+            this->setWifiFunction(WifiFunction::SET);
             this->setSSID(ssid);
             this->setPassword(password);
             this->alignBuffer();
         }
         WifiSet::WifiSet(char * ssid, char * password) {
-            this->setWifiFunction(WifiFunction::WIFI_SET);
+            this->setWifiFunction(WifiFunction::SET);
             this->setSSID(ssid);
             this->setPassword(password);
             this->alignBuffer();
         }
         WifiSet::WifiSet(char * ssid, uint8_t ssid_len, char * password, uint8_t password_len) {
-            this->setWifiFunction(WifiFunction::WIFI_SET);
+            this->setWifiFunction(WifiFunction::SET);
             this->setSSID(ssid, ssid_len);
             this->setPassword(password, password_len);
             this->alignBuffer();

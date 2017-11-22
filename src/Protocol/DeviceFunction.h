@@ -20,10 +20,10 @@ namespace AF820_SmartLight {
         };
 
         enum struct WifiFunction : uint8_t {
-            WIFI_CHECK = 0x01,
-            WIFI_SET = 0x03,
+            CHECK = 0x01,
+            SET = 0x03,
             RESPONSE = 0x04,
-            WIFI_RESTART = 0x05
+            RESTART = 0x05
         };
     }
 }
