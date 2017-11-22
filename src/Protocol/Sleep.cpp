@@ -3,28 +3,28 @@
 namespace AF820_SmartLight {
     namespace Protocol {
         Sleep::Sleep() {
-            this->setLength((uint8_t) 0x26);
-            this->setExtraDataLength((uint8_t) 0x01);
+            this->setLength((uint8_t) 0x27);
+            this->setExtraDataLength((uint8_t) 0x02);
             this->setDeviceFunction(DeviceFunction::SLEEP);
         }
 
         Sleep::Sleep(uint8_t value) {
-            this->setLength((uint8_t) 0x26);
-            this->setExtraDataLength((uint8_t) 0x01);
+            this->setLength((uint8_t) 0x27);
+            this->setExtraDataLength((uint8_t) 0x02);
             this->setDeviceFunction(DeviceFunction::SLEEP);
             this->setSleepValue(value);
         }
 
         Sleep::Sleep(uint8_t * value) {
-            this->setLength((uint8_t) 0x26);
-            this->setExtraDataLength((uint8_t) 0x01);
+            this->setLength((uint8_t) 0x27);
+            this->setExtraDataLength((uint8_t) 0x02);
             this->setDeviceFunction(DeviceFunction::SLEEP);
             this->setSleepValue(value);
         }
 
         Sleep::Sleep(uint16_t value) {
-            this->setLength((uint8_t) 0x26);
-            this->setExtraDataLength((uint8_t) 0x01);
+            this->setLength((uint8_t) 0x27);
+            this->setExtraDataLength((uint8_t) 0x02);
             this->setDeviceFunction(DeviceFunction::SLEEP);
             this->setSleepValue(value);
         }
