@@ -10,7 +10,7 @@ namespace AF820_SmartLight {
     namespace Protocol {
         class WifiSet : public Wifi {
         protected:
-            uint8_t buffer[32 + 64 + 2]; // 1 : SSID_LEN + 32 : SSID + 1 : password_LEN 64 : password
+            uint8_t buffer[32 + 64 + 2] {}; // 1 : SSID_LEN + 32 : SSID + 1 : password_LEN 64 : password
             std::string ssid;
             std::string password;
 
