@@ -31,6 +31,10 @@ namespace AF820_SmartLight {
             void setSSID(const char * ssid, uint8_t len);
             void setPassword(const char * password);
             void setPassword(const char * password, uint8_t len);
+
+            // trunctuate value to max length
+            void checkSSID();
+            void checkPassword();
         };
     }
 }
