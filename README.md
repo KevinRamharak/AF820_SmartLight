@@ -8,7 +8,7 @@ Therefore this project was born, where I try to write a more general aproach to 
 Furthermore I will also try to provide scripts (probably Python) that can configure an 'AF820 SmartLight' from out of the (literal) box.
 
 ## Todo list:
-- [ ] Port the old struct/classes into new C++ classes with correct inheritance
+- [x] Port the old struct/classes into new C++ classes with correct inheritance
 - [ ] Write a simple and non-blocking UDP/IP abstraction to send and receive packets
 - [ ] Create a (decent) API so it can be used for other programs than the command line application
 - [ ] Daemonize the command line application
@@ -29,12 +29,12 @@ Furthermore I will also try to provide scripts (probably Python) that can config
     * [ ] (?) as a C/C++ extension
   + [ ] C
     * [ ] Library
-    
+
 ## Purpose
 Main focus and goal of this project is Fun/Education. The more i know about low level programming the more i love it.
 There is something exiting and engaging about manipulating a (proprietary) byte protocol on actual byte level.
 
 ## External / Sources
 ### Info about what information i used and where i got it
-Most of the protocol information is from this guys [MQTT implementation](https://gitlab.com/iot/af820smartlight)
-For the C socket programming i used (Beej's networking guide](http://beej.us/guide/bgnet/)
+- Most of the protocol information is from this guys [MQTT implementation](https://gitlab.com/iot/af820smartlight)
+- For the C socket programming i used (Beej's networking guide](http://beej.us/guide/bgnet/)
