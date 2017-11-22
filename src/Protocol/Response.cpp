@@ -8,13 +8,13 @@ namespace AF820_SmartLight {
             this->setDeviceFunction(DeviceFunction::RESPONSE);
         }
 
-        uint8_t * getWriteByteStream() {
+        uint8_t * Response::getWriteByteStream() {
             return (uint8_t *) this;
         }
 
         uint16_t Response::fill(uint8_t * src, uint16_t len) {
             uint8_t * pointer = this->getWriteByteStream();
-            uint16_t length = (uint16_t) (this->length[0] << 8) + this->length[1];
+            uint16_t length = this->getLength();
 
             for(uint16_t i = 0; i < len && i < length; i++) {
                 pointer[i] = src[i];
