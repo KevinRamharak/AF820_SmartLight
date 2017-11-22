@@ -7,8 +7,15 @@
 namespace AF820_SmartLight {
     namespace Protocol {
         class Random : public Standard {
+        protected:
+            uint8_t random = 0x00;
         public:
             Random();
+            Random(bool state);
+            Random(uint8_t state);
+
+            void setRandomValue(bool state);
+            void setRandomValue(uint8_t state);
         };
     }
 }
