@@ -4,6 +4,14 @@ namespace AF820_SmartLight {
     namespace Protocol {
         Standard::Standard() {}
 
+        void Standard::setRemote(bool isRemote) {
+            this->header[1] = isRemote ? 0x66 : 0xAA;
+        }
+
+        void Standard::setRemote(uint8_t isRemote) {
+            this->header[1] = isRemote > 0 ? 0x66 : 0xAA;
+        }
+
         void Standard::setLength(const uint8_t length) {
             this->length[0] = 0x00;
             this->length[1] = length;

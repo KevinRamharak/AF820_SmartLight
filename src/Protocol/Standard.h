@@ -36,6 +36,9 @@ namespace AF820_SmartLight {
         public:
             Standard();
 
+            void setRemote(bool isRemote);
+            void setRemote(uint8_t isRemote);
+
             void setLength(const uint8_t length);
             void setLength(const uint8_t * length);
             void setLength(const uint16_t length);
