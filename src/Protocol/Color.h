@@ -13,24 +13,24 @@ namespace AF820_SmartLight {
             uint8_t blue[2] { 0x00, 0x00 };
             uint8_t white[2] { 0x00, 0x00 };
             uint8_t time[2] { 0x00, 0x00 };
-            uint8_t lum[2] { 0x00, 0x00 };
+            uint8_t lux[2] { 0x00, 0x00 };
 
         public:
             Color();
             Color(uint8_t red, uint8_t green, uint8_t blue);
             Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t white);
             Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t white, uint8_t time);
-            Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t white, uint8_t time, uint8_t lum);
+            Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t white, uint8_t time, uint8_t lux);
 
             Color(uint8_t * red, uint8_t * green, uint8_t * blue);
             Color(uint8_t * red, uint8_t * green, uint8_t * blue, uint8_t * white);
             Color(uint8_t * red, uint8_t * green, uint8_t * blue, uint8_t * white, uint8_t * time);
-            Color(uint8_t * red, uint8_t * green, uint8_t * blue, uint8_t * white, uint8_t * time, uint8_t * lum);
+            Color(uint8_t * red, uint8_t * green, uint8_t * blue, uint8_t * white, uint8_t * time, uint8_t * lux);
 
             Color(uint16_t red, uint16_t green, uint16_t blue);
             Color(uint16_t red, uint16_t green, uint16_t blue, uint16_t white);
             Color(uint16_t red, uint16_t green, uint16_t blue, uint16_t white, uint16_t time);
-            Color(uint16_t red, uint16_t green, uint16_t blue, uint16_t white, uint16_t time, uint16_t lum);
+            Color(uint16_t red, uint16_t green, uint16_t blue, uint16_t white, uint16_t time, uint16_t lux);
 
             void setRed(uint8_t value);
             void setRed(uint8_t * value);
@@ -52,9 +52,9 @@ namespace AF820_SmartLight {
             void setTime(uint8_t * value);
             void setTime(uint16_t value);
 
-            void setLumenosity(uint8_t value);
-            void setLumenosity(uint8_t * value);
-            void setLumenosity(uint16_t value);
+            void setLux(uint8_t value);
+            void setLux(uint8_t * value);
+            void setLux(uint16_t value);
         };
     }
 }

@@ -3,8 +3,8 @@
 namespace AF820_SmartLight {
     namespace Protocol {
         void WifiSet::alignBuffer() {
-            uint8_t ssid_len = this->ssid->lenght();
-            uint8_t password_len = this->password->length();
+            uint8_t ssid_len = this->ssid.length();
+            uint8_t password_len = this->password.length();
 
             // at offset 0 put ssid_len
             this->buffer[0] = ssid_len;
@@ -46,13 +46,13 @@ namespace AF820_SmartLight {
             this->setPassword(password);
             this->alignBuffer();
         }
-        WifiSet::WifiSet(char * ssid, char * password) {
+        WifiSet::WifiSet(const char * ssid, const char * password) {
             this->setWifiFunction(WifiFunction::SET);
             this->setSSID(ssid);
             this->setPassword(password);
             this->alignBuffer();
         }
-        WifiSet::WifiSet(char * ssid, uint8_t ssid_len, char * password, uint8_t password_len) {
+        WifiSet::WifiSet(const char * ssid, uint8_t ssid_len, const char * password, uint8_t password_len) {
             this->setWifiFunction(WifiFunction::SET);
             this->setSSID(ssid, ssid_len);
             this->setPassword(password, password_len);
@@ -68,18 +68,18 @@ namespace AF820_SmartLight {
 
         // (char * str) -> 0 terminated string
         // (char * str, uint8_t len) -> fixed length string
-        void WifiSet::setSSID(char * ssid) {
+        void WifiSet::setSSID(const char * ssid) {
             this->ssid = std::string(ssid);
         }
-        void WifiSet::setSSID(char * ssid, uint8_t len) {
+        void WifiSet::setSSID(const char * ssid, uint8_t len) {
             this->ssid = std::string(ssid, len);
         }
 
-        void WifiSet::setPassword(char * password) {
+        void WifiSet::setPassword(const char * password) {
             this->password = std::string(password);
         }
-        void WifiSet::setPassword(char * password, uint8_t len) {
-            this->password = std::string(password, password_len);
+        void WifiSet::setPassword(const char * password, uint8_t len) {
+            this->password = std::string(password, len);
         }
     }
 }

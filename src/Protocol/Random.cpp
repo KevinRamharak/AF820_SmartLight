@@ -12,14 +12,14 @@ namespace AF820_SmartLight {
             this->setLength((uint8_t) 0x26);
             this->setExtraDataLength((uint8_t) 0x01);
             this->setDeviceFunction(DeviceFunction::RANDOM);
-            this->setRandomValue(state);
+            this->setRandom(state);
         }
 
         Random::Random(uint8_t state) {
             this->setLength((uint8_t) 0x26);
             this->setExtraDataLength((uint8_t) 0x01);
             this->setDeviceFunction(DeviceFunction::RANDOM);
-            this->setRandomValue(state);
+            this->setRandom(state);
         }
 
         void Random::setRandom(bool state) {

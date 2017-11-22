@@ -15,8 +15,9 @@ namespace AF820_SmartLight {
         uint16_t Response::fill(uint8_t * src, uint16_t len) {
             uint8_t * pointer = this->getWriteByteStream();
             uint16_t length = this->getLength();
+            uint16_t i;
 
-            for(uint16_t i = 0; i < len && i < length; i++) {
+            for(i = 0; i < len && i < length; i++) {
                 pointer[i] = src[i];
             }
 
@@ -69,7 +70,7 @@ namespace AF820_SmartLight {
         }
         void Response::setBlue(uint8_t * value) {
             this->blue[0] = value[0];
-            this->blue[1] = value[1]
+            this->blue[1] = value[1];
         }
         void Response::setBlue(uint16_t value) {
             this->blue[0] = (uint8_t) (value >> 8);
@@ -82,7 +83,7 @@ namespace AF820_SmartLight {
         }
         void Response::setWhite(uint8_t * value) {
             this->white[0] = value[0];
-            this->white[1] = value[1]
+            this->white[1] = value[1];
         }
         void Response::setWhite(uint16_t value) {
             this->white[0] = (uint8_t) (value >> 8);
@@ -95,24 +96,24 @@ namespace AF820_SmartLight {
         }
         void Response::setTime(uint8_t * value) {
             this->time[0] = value[0];
-            this->time[1] = value[1]
+            this->time[1] = value[1];
         }
         void Response::setTime(uint16_t value) {
             this->time[0] = (uint8_t) (value >> 8);
             this->time[1] = (uint8_t) value;
         }
 
-        void Response::setLumenosity(uint8_t value) {
-            this->lum[0] = 0x00;
-            this->lum[1] = value;
+        void Response::setLux(uint8_t value) {
+            this->lux[0] = 0x00;
+            this->lux[1] = value;
         }
-        void Response::setLumenosity(uint8_t * value) {
-            this->lum[0] = value[0];
-            this->lum[1] = value[1]
+        void Response::setLux(uint8_t * value) {
+            this->lux[0] = value[0];
+            this->lux[1] = value[1];
         }
-        void Response::setLumenosity(uint16_t value) {
-            this->lum[0] = (uint8_t) (value >> 8);
-            this->lum[1] = (uint8_t) value;
+        void Response::setLux(uint16_t value) {
+            this->lux[0] = (uint8_t) (value >> 8);
+            this->lux[1] = (uint8_t) value;
         }
 
         void Response::setSleep(uint8_t value) {

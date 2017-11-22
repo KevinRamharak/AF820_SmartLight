@@ -39,7 +39,7 @@ namespace AF820_SmartLight {
             this->setWhite(white);
             this->setTime(time);
         }
-        Color::Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t white, uint8_t time, uint8_t lum) {
+        Color::Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t white, uint8_t time, uint8_t lux) {
             this->setLength((uint8_t) 0x31);
             this->setExtraDataLength((uint8_t) 0x0C);
             this->setDeviceFunction(DeviceFunction::COLOR);
@@ -48,11 +48,11 @@ namespace AF820_SmartLight {
             this->setBlue(blue);
             this->setWhite(white);
             this->setTime(time);
-            this->setLumenosity(lum);
+            this->setLux(lux);
         }
 
         // uint8_t *
-        Color::Color(uint8_t * red, uint8_t * * green, uint8_t * blue) {
+        Color::Color(uint8_t * red, uint8_t * green, uint8_t * blue) {
             this->setLength((uint8_t) 0x31);
             this->setExtraDataLength((uint8_t) 0x0C);
             this->setDeviceFunction(DeviceFunction::COLOR);
@@ -79,7 +79,7 @@ namespace AF820_SmartLight {
             this->setWhite(white);
             this->setTime(time);
         }
-        Color::Color(uint8_t * red, uint8_t * green, uint8_t * blue, uint8_t * white, uint8_t * time, uint8_t * lum) {
+        Color::Color(uint8_t * red, uint8_t * green, uint8_t * blue, uint8_t * white, uint8_t * time, uint8_t * lux) {
             this->setLength((uint8_t) 0x31);
             this->setExtraDataLength((uint8_t) 0x0C);
             this->setDeviceFunction(DeviceFunction::COLOR);
@@ -88,7 +88,7 @@ namespace AF820_SmartLight {
             this->setBlue(blue);
             this->setWhite(white);
             this->setTime(time);
-            this->setLumenosity(lum);
+            this->setLux(lux);
         }
 
         // uint16_t
@@ -119,7 +119,7 @@ namespace AF820_SmartLight {
             this->setWhite(white);
             this->setTime(time);
         }
-        Color::Color(uint16_t red, uint16_t green, uint16_t blue, uint16_t white, uint16_t time, uint16_t lum) {
+        Color::Color(uint16_t red, uint16_t green, uint16_t blue, uint16_t white, uint16_t time, uint16_t lux) {
             this->setLength((uint8_t) 0x31);
             this->setExtraDataLength((uint8_t) 0x0C);
             this->setDeviceFunction(DeviceFunction::COLOR);
@@ -128,7 +128,7 @@ namespace AF820_SmartLight {
             this->setBlue(blue);
             this->setWhite(white);
             this->setTime(time);
-            this->setLumenosity(lum);
+            this->setLux(lux);
         }
 
         void Color::setRed(uint8_t value) {
@@ -163,7 +163,7 @@ namespace AF820_SmartLight {
         }
         void Color::setBlue(uint8_t * value) {
             this->blue[0] = value[0];
-            this->blue[1] = value[1]
+            this->blue[1] = value[1];
         }
         void Color::setBlue(uint16_t value) {
             this->blue[0] = (uint8_t) (value >> 8);
@@ -176,7 +176,7 @@ namespace AF820_SmartLight {
         }
         void Color::setWhite(uint8_t * value) {
             this->white[0] = value[0];
-            this->white[1] = value[1]
+            this->white[1] = value[1];
         }
         void Color::setWhite(uint16_t value) {
             this->white[0] = (uint8_t) (value >> 8);
@@ -189,24 +189,24 @@ namespace AF820_SmartLight {
         }
         void Color::setTime(uint8_t * value) {
             this->time[0] = value[0];
-            this->time[1] = value[1]
+            this->time[1] = value[1];
         }
         void Color::setTime(uint16_t value) {
             this->time[0] = (uint8_t) (value >> 8);
             this->time[1] = (uint8_t) value;
         }
 
-        void Color::setLumenosity(uint8_t value) {
-            this->lum[0] = 0x00;
-            this->lum[1] = value;
+        void Color::setLux(uint8_t value) {
+            this->lux[0] = 0x00;
+            this->lux[1] = value;
         }
-        void Color::setLumenosity(uint8_t * value) {
-            this->lum[0] = value[0];
-            this->lum[1] = value[1]
+        void Color::setLux(uint8_t * value) {
+            this->lux[0] = value[0];
+            this->lux[1] = value[1];
         }
-        void Color::setLumenosity(uint16_t value) {
-            this->lum[0] = (uint8_t) (value >> 8);
-            this->lum[1] = (uint8_t) value;
+        void Color::setLux(uint16_t value) {
+            this->lux[0] = (uint8_t) (value >> 8);
+            this->lux[1] = (uint8_t) value;
         }
     }
 }

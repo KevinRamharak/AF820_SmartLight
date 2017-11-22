@@ -19,18 +19,18 @@ namespace AF820_SmartLight {
         public:
             WifiSet();
             WifiSet(std::string ssid, std::string password);
-            WifiSet(char * ssid, char * password);
-            WifiSet(char * ssid, uint8_t ssid_len, char * password, uint8_t password_len);
+            WifiSet(const char * ssid, const char * password);
+            WifiSet(const char * ssid, uint8_t ssid_len, const char * password, uint8_t password_len);
 
             void setSSID(std::string ssid);
             void setPassword(std::string password);
 
             // (char * str) -> 0 terminated string
             // (char * str, uint8_t len) -> fixed length string
-            void setSSID(char * ssid);
-            void setSSID(char * ssid, uint8_t len);
-            void setPassword(char * password);
-            void setPassword(char * password, uint8_t len);
+            void setSSID(const char * ssid);
+            void setSSID(const char * ssid, uint8_t len);
+            void setPassword(const char * password);
+            void setPassword(const char * password, uint8_t len);
         };
     }
 }
