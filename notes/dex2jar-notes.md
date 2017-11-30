@@ -81,7 +81,7 @@
         public long mac;
 
         // so port is 32 bit integer -> seems weird but ok
-        public int port;ew questions
+        public int port;
         // sequence number is weird to be 32 bit. Because in the packet it has only 16 bits available and can never be 0
         public int seq;
         // the extra data bytes of the packet
