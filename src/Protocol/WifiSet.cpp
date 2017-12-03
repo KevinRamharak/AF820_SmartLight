@@ -90,12 +90,14 @@ namespace AF820_SmartLight {
             if(this->ssid.length() > 32) {
                 this->ssid = this->ssid.substr(0, 32);
             }
+            this->alignBuffer();
         }
 
         void WifiSet::checkPassword() {
             if(this->password.length() > 64) {
                 this->password = this->password.substr(0, 64);
             }
+            this->alignBuffer();
         }
     }
 }
