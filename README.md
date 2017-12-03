@@ -38,3 +38,11 @@ There is something exiting and engaging about manipulating a (proprietary) byte 
 ### Info about what information i used and where i got it
 - Most of the protocol information is from this guys [MQTT implementation](https://gitlab.com/iot/af820smartlight)
 - For the C socket programming i used (Beej's networking guide](http://beej.us/guide/bgnet/)
+
+## Notes
+### `UDP::send` vs `UDP::Connection`
+So I could just implement a 'simple' function `send`. This would take an IP Adress, Port, a byte pointer and a length and then send it over the wire.
+
+Or I could implement a `Connection` class that would be initialised with an IP Adress and Port. And could sends byte buffers (and maybe `Protocol::*` instances) over the wire. Buy `Connection` implies some sort of duplex stream. This could be implemented with the `Protocol::Standard::sequence_number` bytes but that would be only specific for this custom protocol.
+
+So I will probably implement `send` since it would be a nice and simple abstraction that has its uses in this application. Maybe implement `Connection` if this can be shaped for something usefull and non reliant on the custom `Protocol::*` classes.
