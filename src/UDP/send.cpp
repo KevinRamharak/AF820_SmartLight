@@ -17,6 +17,10 @@ namespace AF820_SmartLight {
             endpoint.sin_addr.s_addr = inet_addr(address);
             endpoint.sin_port = htons(port);
 
+            // dont forget to set broadcast option
+            int opt = 1;
+            setsockopt(socket_fd, SOL_SOCKET, SO_BROADCAST, &opt, sizeof(opt));
+
             int result = ::sendto(socket_fd, pointer, length, 0, (struct sockaddr *) &endpoint, sizeof(endpoint));
 
             if(result < 0) {
