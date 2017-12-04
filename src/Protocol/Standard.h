@@ -3,6 +3,7 @@
 
 #include <cstdint>
 
+#include "../UDP/send.h"
 #include "DeviceFunction.h"
 
 namespace AF820_SmartLight {
@@ -95,6 +96,7 @@ namespace AF820_SmartLight {
 
             uint16_t getLength() const;
             uint16_t getExtraDataLength() const;
+
         };
     }
 }
