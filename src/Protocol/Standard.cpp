@@ -25,6 +25,10 @@ namespace AF820_SmartLight {
             this->length[1] = (uint8_t) length;
         }
 
+        // destination mac is really weird
+        // lamp 1
+        // actual mac = 0x62, 0x01, 0x94 ,0x14, 0xB4, 0xC6
+        // dest_mac = 0x00, 0x00, 0x00, 0x00, 0xc6, 0xb4, 0x14, 0x00
         void Standard::setDeviceMac(const uint8_t * mac) {
             for(uint8_t i = 0; i < 6; i++) {
                 this->device_mac[i + 2] = mac[i];
