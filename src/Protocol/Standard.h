@@ -20,7 +20,7 @@ namespace AF820_SmartLight {
             const uint8_t fix_2 [3] {};
             uint8_t device_code = 0x00;
             uint8_t device_version = 0x00;
-            uint8_t device_function = 0x00; // this could be of type 'enum struct DeviceFunction'
+            uint8_t device_function = 0x00;
             const uint8_t type_big = 0x00;
             const uint8_t type_small = 0x00;
             uint8_t controller_mac [4] {};
