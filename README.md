@@ -46,3 +46,27 @@ So I could just implement a 'simple' function `send`. This would take an IP Adre
 Or I could implement a `Connection` class that would be initialised with an IP Adress and Port. And could sends byte buffers (and maybe `Protocol::*` instances) over the wire. Buy `Connection` implies some sort of duplex stream. This could be implemented with the `Protocol::Standard::sequence_number` bytes but that would be only specific for this custom protocol.
 
 So I will probably implement `send` since it would be a nice and simple abstraction that has its uses in this application. Maybe implement `Connection` if this can be shaped for something usefull and non reliant on the custom `Protocol::*` classes.
+
+### How does the Android application know where its devices are on the local network?
+After some testing i think the best way to figure out if there are any smart devices on the network is as followed:
+```
+# pseudo code
+
+devices = arp_scan()
+
+for every 5_s in 2_m:
+  for device in devices:
+    packet = create_check_packet(device.mac_address) # how they use mac adress is pretty weird
+    for every 20_ms in 100_ms:
+      send(device.ip, 5880, packet)
+      response = recv(device.ip, 5880)
+      if(check_response(response)):
+        register_device(device)
+      else
+        discard_device(device)
+
+```
+The reason you have to first get all the mac_addresses is because an IOT device won't respond if the packet is not meant for them. Probably better this way. There is a `findPort = 5879` port mentioned in the reverse engineerd jar code but i cannot get that to work.
+
+### SSID
+Another thing to work out is to scan for SSID's starting with `ELLE.`. This will let us know if there are any devices in the area that are not connected to our local network. After connecting with this SSID we will be able to set its configuration to connect to our own local network. Send the command to restart. Connect to our own local network again and do a scan to see what its ip is.

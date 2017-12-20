@@ -37,6 +37,7 @@ namespace AF820_SmartLight {
         public:
             Standard();
 
+            // #NOTE: Based on the android app it seems that the remote 'flag' is set when the device is not on the local network
             void setRemote(bool isRemote);
             void setRemote(uint8_t isRemote);
 
