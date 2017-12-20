@@ -53,7 +53,7 @@ namespace AF820_SmartLight {
             void setDeviceFunction(const DeviceFunction func);
 
             void setControllerMac(const uint8_t * mac);
-            void setControllerMac(const uint64_t mac);
+            void setControllerMac(const uint32_t mac);
 
             void setSequenceNumber(const uint8_t number);
             void setSequenceNumber(const uint8_t * number);

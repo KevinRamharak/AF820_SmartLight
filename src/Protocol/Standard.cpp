@@ -53,14 +53,14 @@ namespace AF820_SmartLight {
         }
 
         void Standard::setControllerMac(const uint8_t * mac) {
-            for(uint8_t i = 0; i < 6; i++) {
-                this->controller_mac[i + 2] = mac[i];
+            for(uint8_t i = 0; i < 4; i++) {
+                this->controller_mac[i] = mac[i];
             }
         }
-        void Standard::setControllerMac(const uint64_t mac) {
+        void Standard::setControllerMac(const uint32_t mac) {
             // if you forgot how this works unroll the loop
-            for(uint8_t i = 0; i < 6; i++) {
-                this->controller_mac[i + 2] = (uint8_t) (mac >> (56 - i * 8) );
+            for(uint8_t i = 0; i < 4; i++) {
+                this->controller_mac[i] = (uint8_t) (mac >> (24 - i * 8) );
             }
         }
 
