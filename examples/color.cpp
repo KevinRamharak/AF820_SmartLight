@@ -18,6 +18,7 @@
 #include "Protocol/WifiSet.h"
 
 #include "UDP/send.h"
+#include "UDP/Connection.h"
 
 using namespace AF820_SmartLight::Protocol;
 using namespace AF820_SmartLight::UDP;
@@ -59,7 +60,7 @@ void printPacket(Standard & packet) {
 
 
 int main(int argc, char ** argv) {
-    const char * ip = "10.0.0.255";
+    const char * ip = "10.0.0.16";
     const uint16_t port = 5880;
     // destination mac is really weird
     // lamp 1
@@ -85,5 +86,20 @@ int main(int argc, char ** argv) {
     uint8_t buffer[packet.getLength()];
     packet.copy(buffer, packet.getLength());
 
-    return AF820_SmartLight::UDP::send(ip, port, buffer, packet.getLength()) != true;
+    // UDP::Connection & UDP::Connection::send() example
+    Connection conn(ip, port);
+    std::cout << (conn.send(buffer, packet.getLength()) ? "true" : "false") << std::endl;
+
+    uint8_t recv_buffer[60] = {0};
+    conn.recv(buffer, 60);
+
+    Response resp;
+    resp.fill(recv_buffer, recv_buffer[3]);
+
+    printPacket(resp);
+
+    // // UDP::send() example
+    // // if $result == false then call failed so return a !0 exit code
+    // // if $result == true then call succeeded so return a 0 exit code
+    // int result AF820_SmartLight::UDP::send(ip, port, buffer, packet.getLength()) == false;
 }
