@@ -11,6 +11,7 @@ namespace AF820_SmartLight {
         // @NOTE(kevin@ramharak.nl): This class should probably be virtual (/abstract).
         // Reason it is not is the virtual function table. (?) This increases the 'sizeof()' and im not sure if this is only the class itself or also any (child)instances
         // it might conflict with the assumption that the class is an internal memory representation of the protocol
+        // @NOTE(kevin@ramharark.nl): Using #pragma pack() will force a certain memory layout without padding beyond our control
         class Standard {
         protected:
             uint8_t header [2] { 0x55, 0xAA };
